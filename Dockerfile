@@ -16,6 +16,20 @@ RUN apk --no-cache add \
 	&& rm docker-${DOCKER_VERSION}.tgz \
 	&& chmod +x /usr/local/bin/docker
 
+# Install yamllint
+ENV YAMLLINT_VERSION='1.12.1'
+RUN apk --no-cache install py-pip \
+	&& pip install -q --no-cache-dir "yamllint==${YAMLLINT_VERSION}"
+
+# Install sops
+ENV SOPS_VERSION='3.1.1'
+
+RUN curl -sL \
+		"https://github.com/mozilla/sops/releases/download/${SOPS_VERSION}/sops-${SOPS_VERSION}.linux" \
+		-o /tmp/sops \
+	&& chmod +x /tmp/sops \
+	&& mv /tmp/sops /usr/local/bin/
+
 # Install Helm and the GCS plugin for chart repos
 ENV HELM_VERSION='2.11.0' \
 	HELM_GCS_VERSION='0.2.0' \
@@ -31,12 +45,3 @@ RUN curl -fsSLO \
 		--version "v${HELM_GCS_VERSION}" \
 	&& helm plugin install https://github.com/pagerinc/helm-diff \
 		--version 'master'
-
-# Install sops
-ENV SOPS_VERSION='3.1.1'
-
-RUN curl -sL \
-		"https://github.com/mozilla/sops/releases/download/${SOPS_VERSION}/sops-${SOPS_VERSION}.linux" \
-		-o /tmp/sops \
-	&& chmod +x /tmp/sops \
-	&& mv /tmp/sops /usr/local/bin/
