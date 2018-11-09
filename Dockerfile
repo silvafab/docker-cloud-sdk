@@ -16,6 +16,8 @@ RUN apk --no-cache add \
 	&& rm docker-${DOCKER_VERSION}.tgz \
 	&& chmod +x /usr/local/bin/docker
 
+COPY .docker /root/.docker
+
 # Install yamllint
 ENV YAMLLINT_VERSION='1.12.1'
 RUN apk --no-cache add py-pip \
