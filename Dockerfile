@@ -25,7 +25,7 @@ RUN apk --no-cache add py-pip \
 	&& apk del py-pip
 
 # Install sops
-ENV SOPS_VERSION='3.1.1'
+ENV SOPS_VERSION='3.2.0'
 
 RUN curl -sL \
 		"https://github.com/mozilla/sops/releases/download/${SOPS_VERSION}/sops-${SOPS_VERSION}.linux" \
