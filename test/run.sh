@@ -3,7 +3,7 @@
 set -o errexit
 set -o nounset
 
-apk --no-cache add bats && bats /tmp/test
+apk --no-cache add bats
 
 echo "Unit Tests..."
 

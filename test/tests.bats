@@ -5,7 +5,7 @@
 }
 
 @test "It should use docker 18.06.1-ce" {
-  kong-init --version | grep 18.06.1-ce
+  docker --version | grep 18.06.1-ce
 }
 
 @test "It should install sops in PATH" {
@@ -21,5 +21,5 @@
 }
 
 @test "It should use helm 2.12.2" {
-  helm --version | grep 2.12.2
+  helm version | grep 2.12.2
 }
