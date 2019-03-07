@@ -34,7 +34,7 @@ RUN curl -sL \
 	&& mv /tmp/sops /usr/local/bin/
 
 # Install Helm and the GCS plugin for chart repos
-ENV HELM_VERSION='2.12.2' \
+ENV HELM_VERSION='2.13.0' \
 	HELM_GCS_VERSION='0.2.0' \
 	HELM_HOME='/root/.helm'
 

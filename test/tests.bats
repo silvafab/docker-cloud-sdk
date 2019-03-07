@@ -20,6 +20,6 @@
   which helm
 }
 
-@test "It should use helm 2.12.2" {
-  helm version | grep 2.12.2
+@test "It should use helm 2.13.0" {
+  helm version | grep 2.13.0
 }
