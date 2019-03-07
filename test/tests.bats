@@ -4,8 +4,8 @@
   which docker
 }
 
-@test "It should use docker 18.06.1-ce" {
-  docker --version | grep 18.06.1-ce
+@test "It should use docker 18.09.3" {
+  docker --version | grep 18.09.3
 }
 
 @test "It should install sops in PATH" {

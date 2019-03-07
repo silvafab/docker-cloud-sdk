@@ -1,7 +1,7 @@
 FROM google/cloud-sdk:237.0.0-alpine
 
 # Install Docker and GCR Credentials helper
-ENV DOCKER_VERSION='18.06.1-ce' \
+ENV DOCKER_VERSION='18.09.3' \
 	DOCKER_API_VERSION='1.23'
 
 RUN apk --no-cache add \
