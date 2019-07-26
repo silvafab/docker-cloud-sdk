@@ -23,3 +23,11 @@
 @test "It should use helm 2.13.0" {
   helm version | grep 2.13.0
 }
+
+@test "It should install gcloud in PATH" {
+  which gcloud
+}
+
+@test "It should use gcloud 255.0.0" {
+  gcloud --version | grep 255.0.0
+}
