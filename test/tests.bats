@@ -12,8 +12,8 @@
   which sops
 }
 
-@test "It should use sops 3.2.0" {
-  sops --version | grep 3.2.0
+@test "It should use sops 3.3.1" {
+  sops --version | grep 3.3.1
 }
 
 @test "It should install helm in PATH" {
