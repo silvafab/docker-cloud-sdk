@@ -29,5 +29,5 @@
 }
 
 @test "It should use gcloud 256.0.x" {
-  gcloud --version | grep 255.0
+  gcloud --version | grep 256.0
 }
