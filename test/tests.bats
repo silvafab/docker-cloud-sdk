@@ -36,6 +36,6 @@
   which hub
 }
 
-@test "It should use hub 2.13.x" {
-  hub --version | grep 2.13
+@test "It should use hub 2.12.x" {
+  hub --version | grep 2.12
 }
