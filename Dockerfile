@@ -20,6 +20,7 @@ COPY .docker /root/.docker
 
 # Install yamllint
 ENV YAMLLINT_VERSION='1.15.0'
+
 RUN apk --no-cache add py-pip \
 	&& pip install -q --no-cache-dir "yamllint==${YAMLLINT_VERSION}" \
 	&& apk del py-pip
@@ -48,3 +49,13 @@ RUN curl -fsSLO \
 		--version "v${HELM_GCS_VERSION}" \
 	&& helm plugin install https://github.com/pagerinc/helm-diff \
 		--version 'master'
+
+# Install hub
+ENV HUB_VERSION=2.12.3
+ENV HUB_BASE_URL=https://github.com/github/hub/releases/download
+ENV HUB_TAR_FILE="v${HUB_VERSION}/hub-linux-amd64-${HUB_VERSION}.tgz"
+
+RUN curl -L ${HUB_BASE_URL}/${HUB_TAR_FILE} |tar xvz && \
+	mv hub-linux-amd64-${HUB_VERSION}/bin/hub /usr/local/bin/hub && \
+	chmod +x /usr/local/bin/hub && \
+	rm -rf hub-linux-amd64-${HUB_VERSION}

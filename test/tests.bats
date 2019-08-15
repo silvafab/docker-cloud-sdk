@@ -31,3 +31,11 @@
 @test "It should use gcloud 257.0.x" {
   gcloud --version | grep 257.0
 }
+
+@test "It should install hub in PATH" {
+  which hub
+}
+
+@test "It should use hub 2.13.x" {
+  hub --version | grep 2.13
+}
