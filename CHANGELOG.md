@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.4.0] - 2019-08-28
+### Changed
+- GCloud 260.x base.
+
 ## [1.2.3] - 2019-08-09
 ### Added
 - GCloud 257.x base.
@@ -33,7 +37,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - yamllint support.
 
-[Unreleased]: https://github.com/pagerinc/docker-cloud-sdk/compare/1.2.4...HEAD
+[Unreleased]: https://github.com/pagerinc/docker-cloud-sdk/compare/1.4.0...HEAD
+[1.4.0]: https://github.com/pagerinc/docker-cloud-sdk/compare/1.2.4...1.4.0
 [1.2.4]: https://github.com/pagerinc/docker-cloud-sdk/compare/1.2.3...1.2.4
 [1.2.3]: https://github.com/pagerinc/docker-cloud-sdk/compare/1.2.2...1.2.3
 [1.2.2]: https://github.com/pagerinc/docker-cloud-sdk/compare/1.0.0...1.2.2
