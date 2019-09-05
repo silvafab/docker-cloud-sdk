@@ -50,6 +50,9 @@ RUN curl -fsSLO \
 	&& helm plugin install https://github.com/pagerinc/helm-diff \
 		--version 'master'
 
+# Install shellcheck
+COPY --from=koalaman/shellcheck-alpine:v0.7.0@sha256:169a51b086af0ab181e32801c15deb78944bb433d4f2c0a21cc30d4e60547065 /bin/shellcheck /bin/shellcheck
+
 # Install hub
 ENV HUB_VERSION=2.12.3
 ENV HUB_BASE_URL=https://github.com/github/hub/releases/download
