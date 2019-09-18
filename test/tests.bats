@@ -24,6 +24,14 @@
   helm version | grep 2.14
 }
 
+@test "It should install helm tiller plugin" {
+  helm plugin list | grep -e tiller
+}
+
+@test "It should install helm diff plugin" {
+  helm plugin list | grep -e diff
+}
+
 @test "It should install gcloud in PATH" {
   command -v gcloud
 }
