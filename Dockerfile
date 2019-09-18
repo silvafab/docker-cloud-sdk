@@ -36,7 +36,8 @@ RUN curl -sL \
 
 # Install Helm and the GCS plugin for chart repos
 ENV HELM_VERSION='2.14.2' \
-	HELM_GCS_VERSION='0.2.0' \
+	HELM_GCS_VERSION='v0.2.0' \
+	HELM_TILLER_VERSION='v0.8.6' \
 	HELM_HOME='/root/.helm'
 
 RUN curl -fsSLO \
@@ -46,9 +47,11 @@ RUN curl -fsSLO \
 	&& chmod +x /usr/local/bin/helm \
 	&& mkdir -p /root/.helm/plugins \
 	&& helm plugin install https://github.com/viglesiasce/helm-gcs.git \
-		--version "v${HELM_GCS_VERSION}" \
+		--version "${HELM_GCS_VERSION}" \
 	&& helm plugin install https://github.com/pagerinc/helm-diff \
-		--version 'master'
+		--version 'master' \
+	&& helm plugin install https://github.com/rimusz/helm-tiller \
+		--version "${HELM_TILLER_VERSION}"
 
 # Install shellcheck
 COPY --from=koalaman/shellcheck-alpine:v0.7.0@sha256:169a51b086af0ab181e32801c15deb78944bb433d4f2c0a21cc30d4e60547065 /bin/shellcheck /bin/shellcheck
