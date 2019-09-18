@@ -28,8 +28,8 @@
   command -v gcloud
 }
 
-@test "It should use gcloud 260.0.x" {
-  gcloud --version | grep 261.0
+@test "It should use gcloud 262.0.x" {
+  gcloud --version | grep 262.0
 }
 
 @test "It should install hub in PATH" {
