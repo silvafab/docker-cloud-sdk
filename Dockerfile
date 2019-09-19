@@ -20,9 +20,11 @@ COPY .docker /root/.docker
 
 # Install yamllint
 ENV YAMLLINT_VERSION='1.15.0'
+ENV YQ_VERSION='2.7.2'
 
 RUN apk --no-cache add py-pip \
 	&& pip install -q --no-cache-dir "yamllint==${YAMLLINT_VERSION}" \
+        && pip install -q --no-cache-dir "yq==${YQ_VERSION}" \
 	&& apk del py-pip
 
 # Install sops
